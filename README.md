@@ -29,7 +29,7 @@ Example:
 
 ```javascript
 
-import { ChatAPI } from 'path_to_easy-assistant-sdk';
+import { ChatAPI } from 'easy-assistant-sdk';
 
 const serverUrl = 'http://localhost:3001'; // Replace with your server's URL
 const toolsMap = {
