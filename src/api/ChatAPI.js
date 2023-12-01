@@ -25,7 +25,11 @@ class ChatAPI {
 
             return response.data;
         } catch (error) {
-            console.log('Error in sending query:', error.response.data, "Status :", error.response.status);
+            if (error.response) {
+                console.log('Error in sending query:', error.response.data, "Status :", error.response.status);
+            } else {
+                console.log('Error in sending query:', error.message);
+            }
             throw error;
         }
     }
@@ -62,6 +66,18 @@ class ChatAPI {
         } catch (error) {
             console.log('Error in getting file:', error.message);
             throw error;
+        }
+    }
+
+    setToolsMap(toolsMap) {
+        // Ensure that a valid toolsMap is provided
+        if (!toolsMap || typeof toolsMap !== 'object') {
+            throw new Error('A valid tools map is required to update the ToolsHandler');
+        }
+
+        // Update each tool in the toolsMap
+        for (const [toolName, toolFunction] of Object.entries(toolsMap)) {
+            this.toolHandler.updateTool(toolName, toolFunction);
         }
     }
 }

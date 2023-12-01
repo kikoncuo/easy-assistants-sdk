@@ -90,6 +90,19 @@ function consoleLogTool(parameter){
 }
 ```
 
+Setting Tools Map
+
+Use setToolsMap to update the tools at any time:
+
+```javascript
+
+const toolsMap = {
+    // Define your tool functions here
+};
+
+chatApi.setToolsMap(toolsMap);
+```
+
 ## 📝 Example Implementation
 
 To see a comprehensive example of how to implement all the features of the easy-assistant-sdk, refer to the src/test/testChatScript.js file in the SDK repository. This script provides a hands-on demonstration and can be directly run using Node.js.

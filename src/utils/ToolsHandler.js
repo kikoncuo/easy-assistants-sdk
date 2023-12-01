@@ -5,7 +5,7 @@ class ToolsHandler {
 
     async execute(toolName, args) {
         if (!this.toolsMap[toolName]) {
-            throw new Error(`Tool ${toolName} is not defined`);
+            throw new Error(`Tool ${toolName} is not defined, make sure you proive a tool with that name to the map when creating your ChatAOPI instance if you want to use it`);
         }
 
         try {
