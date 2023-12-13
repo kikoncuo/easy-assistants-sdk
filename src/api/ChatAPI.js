@@ -80,6 +80,20 @@ class ChatAPI {
             this.toolHandler.updateTool(toolName, toolFunction);
         }
     }
+
+    getToolsMap() {
+        return this.toolHandler.viewToolMap();
+    }
+
+    removeTool(toolName) {
+        try {
+            this.toolHandler.deleteTool(toolName);
+            console.log(`Tool ${toolName} successfully removed`);
+        } catch (error) {
+            throw new Error(`Error removing tool: ${error.message}`);
+        }
+    }    
+    
 }
 
 export default ChatAPI;

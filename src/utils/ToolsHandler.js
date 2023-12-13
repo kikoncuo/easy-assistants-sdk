@@ -21,6 +21,19 @@ class ToolsHandler {
     updateTool(toolName, toolFunction) {
         this.toolsMap[toolName] = toolFunction;
     }
+
+    // Method to see the entire tools map
+    viewToolMap() {
+        return this.toolsMap;
+    }
+
+    // Method to delete a tool
+    deleteTool(toolName) {
+        if (!this.toolsMap[toolName]) {
+            throw new Error(`Tool ${toolName} is not defined in the tools map, cannot delete`);
+        }
+        delete this.toolsMap[toolName];
+    }
 }
 
 export default ToolsHandler;

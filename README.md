@@ -103,6 +103,41 @@ const toolsMap = {
 chatApi.setToolsMap(toolsMap);
 ```
 
+Viewing the Current Tools Map
+
+Use viewCurrentTools to view the current state of the tools map at any time. This function retrieves and displays the current tools registered in the ToolsHandler.
+Usage
+
+```javascript
+
+const viewCurrentTools = () => {
+    const currentToolsMap = chatApi.getToolsMap();
+    console.log('Current Tools:', currentToolsMap);
+};
+
+viewCurrentTools();
+```
+
+Deleting a Tool from the Tools Map
+
+Use removeTool to delete a specific tool from the tools map. This function takes the name of the tool as an argument and removes it from the ToolsHandler.
+Usage
+
+```javascript
+
+const removeTool = (toolName) => {
+    try {
+        chatApi.removeTool(toolName);
+        console.log(`Tool ${toolName} successfully removed`);
+    } catch (error) {
+        console.error(`Error removing tool: ${error.message}`);
+    }
+};
+
+// Example: Remove a tool named 'exampleTool'
+removeTool('exampleTool');
+```
+
 ## 📝 Example Implementation
 
 To see a comprehensive example of how to implement all the features of the easy-assistant-sdk, refer to the src/test/testChatScript.js file in the SDK repository. This script provides a hands-on demonstration and can be directly run using Node.js.
